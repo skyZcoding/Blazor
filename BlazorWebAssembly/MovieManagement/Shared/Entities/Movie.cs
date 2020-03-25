@@ -4,7 +4,16 @@ using System.Text;
 
 namespace MovieManagement.Shared.Entities
 {
-    class Movie
+    public class Movie
     {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public DateTime ReleaseDate { get; set; }
+
+        public byte[] Image { get; set; }
+
+        public List<PersonMovie> PersonMovies { get; set; }
     }
 }
