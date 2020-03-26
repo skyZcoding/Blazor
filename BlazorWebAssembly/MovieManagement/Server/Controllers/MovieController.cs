@@ -49,5 +49,21 @@ namespace MovieManagement.Server.Controllers
 
             return movie.Id;
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            Movie movie = await context.Movies.FindAsync(id);
+
+            if (movie != null)
+            {
+                return NotFound();
+            }
+
+            context.Remove(movie);
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

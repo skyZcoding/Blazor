@@ -52,6 +52,11 @@ namespace MovieManagement.Client.Repository
         public async Task DeleteGenre(int id)
         {
             var response = await httpService.Delete($"{url}/{id}");
+
+            if (!response.Success)
+            {
+                throw new ApplicationException(await response.GetBody());
+            }
         }
     }
 }

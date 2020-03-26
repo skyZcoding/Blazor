@@ -1,0 +1,15 @@
+﻿@page "/movies"
+@inject IMovieRepository movieRepository
+
+<h1>Movies</h1>
+
+<MoviesList Movies="movies" />
+
+@code{
+    private List<Movie> movies;
+
+    protected async override Task OnInitializedAsync()
+    {
+        movies = await movieRepository.GetMovies();
+    }
+}

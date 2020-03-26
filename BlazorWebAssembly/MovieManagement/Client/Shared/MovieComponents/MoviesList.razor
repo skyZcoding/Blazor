@@ -1,0 +1,16 @@
+﻿@inject IMovieRepository movieRepository
+
+<GenericList List="Movies">
+    <ElementTemplate Context="movie">
+        <IndividualMovie Movie="movie" DeleteMovie="DeleteMovie" />
+    </ElementTemplate>
+</GenericList>
+
+@code {
+    [Parameter] public List<Movie> Movies { get; set; }
+
+    private void DeleteMovie(int movieId)
+    {
+        movieRepository.DeleteMovie(movieId);
+    }
+}

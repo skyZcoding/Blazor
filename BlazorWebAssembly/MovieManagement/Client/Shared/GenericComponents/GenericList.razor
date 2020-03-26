@@ -1,0 +1,22 @@
+﻿@typeparam TEntity
+
+@if (List == null)
+{
+    <text>LOADING...</text>
+}
+else if (List.Count == 0)
+{
+    <text>There are no records to show</text>
+}
+else
+{
+    foreach (TEntity element in List)
+    {
+        @ElementTemplate(element)
+    }
+}
+
+@code {
+    [Parameter] public RenderFragment<TEntity> ElementTemplate { get; set; }
+    [Parameter] public List<TEntity> List { get; set; }
+}
