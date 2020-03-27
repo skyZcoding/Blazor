@@ -39,6 +39,18 @@ namespace MovieManagement.Client.Repository
             }
         }
 
+        public async Task<Genre> GetGenreById(int id)
+        {
+            var response = await httpService.Get<Genre>($"{url}/GetGenreById/{id}");
+
+            if (!response.Success)
+            {
+                throw new ApplicationException(await response.GetBody());
+            }
+
+            return response.Response;
+        }
+
         public async Task UpdateGenre(Genre genre)
         {
             var response = await httpService.Put(url, genre);

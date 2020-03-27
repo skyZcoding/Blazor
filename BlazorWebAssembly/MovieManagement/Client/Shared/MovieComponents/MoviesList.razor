@@ -1,16 +1,15 @@
 ﻿@inject IMovieRepository movieRepository
+@inject IJSRuntime js
 
-<GenericList List="Movies">
-    <ElementTemplate Context="movie">
-        <IndividualMovie Movie="movie" DeleteMovie="DeleteMovie" />
-    </ElementTemplate>
-</GenericList>
+<div class="movies-container">
+    <GenericList List="Movies">
+        <ElementTemplate Context="movie">
+            <IndividualMovie Movie="movie" DeleteMovie="DeleteMovie" />
+        </ElementTemplate>
+    </GenericList>
+</div>
 
-@code {
+
+@code{
     [Parameter] public List<Movie> Movies { get; set; }
-
-    private void DeleteMovie(int movieId)
-    {
-        movieRepository.DeleteMovie(movieId);
-    }
 }

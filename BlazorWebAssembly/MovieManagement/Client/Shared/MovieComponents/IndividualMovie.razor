@@ -1,10 +1,25 @@
-﻿<p>Title: @Movie.Name</p>
-<div>
-    <button @onclick="@(() => DeleteMovie.InvokeAsync(Movie.Id))">Delete</button>
+﻿<div class="individual-movie-container">
+    <a href="@MovieURL">
+        <img src="@Movie.Image" alt="Poster" class="movie-poster" />
+    </a>
+    <p><a href="@MovieURL">@Movie.Name</a></p>
+    <div>
+        <a class="btn btn-info">Edit</a>
+        <button type="button" class="btn btn-danger"
+                @onclick="@(() => DeleteMovie.InvokeAsync(Movie))">
+            Delete
+        </button>
+    </div>
 </div>
 
 
 @code {
     [Parameter] public Movie Movie { get; set; }
-    [Parameter] public EventCallback<int> DeleteMovie { get; set; }
+    [Parameter] public EventCallback<Movie> DeleteMovie { get; set; }
+    public string MovieURL { get; set; }
+
+    protected override void OnInitialized()
+    {
+        MovieURL = $"movie/{Movie.Id}";
+    }
 }

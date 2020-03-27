@@ -55,7 +55,7 @@ namespace MovieManagement.Server.Controllers
         {
             Movie movie = await context.Movies.FindAsync(id);
 
-            if (movie != null)
+            if (movie == null)
             {
                 return NotFound();
             }

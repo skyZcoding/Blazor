@@ -1,0 +1,23 @@
+﻿@page "/genres/edit/{GenreId:int}"
+@inject IGenreRepository genreRepository
+@inject NavigationManager navigationManager
+
+<h3>Edit Genre</h3>
+
+<MovieManagement.Client.Shared.GenreComponents.GenreFrom Genre="genre" OnValidSubmit="SaveChanges" />
+
+@code {
+    [Parameter] public int GenreId { get; set; }
+    private Genre genre;
+
+    protected async override Task OnInitializedAsync()
+    {
+        genre = await genreRepository.GetGenreById(GenreId);
+    }
+
+    private void SaveChanges()
+    {
+        genreRepository.UpdateGenre(genre);
+        navigationManager.NavigateTo("genres");
+    }
+}

@@ -1,0 +1,22 @@
+﻿@page "/genres/create"
+@inject IGenreRepository genreRepository
+@inject NavigationManager navigationManager
+
+<h3>Create Genre</h3>
+
+<MovieManagement.Client.Shared.GenreComponents.GenreFrom Genre="newGenre" OnValidSubmit="SaveGenre" />
+
+@code {
+    private Genre newGenre;
+
+    protected override void OnInitialized()
+    {
+        newGenre = new Genre();
+    }
+
+    private void SaveGenre()
+    {
+        genreRepository.CreateGenre(newGenre);
+        navigationManager.NavigateTo("genres");
+    }
+}

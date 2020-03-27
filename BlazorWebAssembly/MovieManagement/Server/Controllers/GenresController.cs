@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MovieManagement.Shared.Entities;
 
 namespace MovieManagement.Server.Controllers
@@ -18,6 +19,12 @@ namespace MovieManagement.Server.Controllers
             this.context = context;
         }
 
+        [HttpGet]
+        public async Task<ActionResult<List<Genre>>> Get()
+        {
+            return await context.Genres.ToListAsync();
+        }
+
         [HttpPost]
         public async Task<ActionResult<int>> Post(Genre genre)
         {
@@ -25,6 +32,19 @@ namespace MovieManagement.Server.Controllers
             await context.SaveChangesAsync();
 
             return genre.Id;
+        }
+
+        [HttpGet("GetGenreById/{genreId:int}")]
+        public async Task<ActionResult<Genre>> GetGenreById(int genreId)
+        {
+            Genre genre = await context.Genres.FindAsync(genreId);
+
+            if (genre == null)
+            {
+                return NotFound();
+            }
+
+            return genre;
         }
 
         [HttpPut]
@@ -41,7 +61,7 @@ namespace MovieManagement.Server.Controllers
         {
             Genre genre = await context.Genres.FindAsync(id);
 
-            if (genre != null)
+            if (genre == null)
             {
                 return NotFound();
             }

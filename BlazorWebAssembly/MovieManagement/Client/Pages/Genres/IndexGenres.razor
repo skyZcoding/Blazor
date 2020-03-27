@@ -1,0 +1,18 @@
+﻿@page "/genres"
+@inject IGenreRepository genreRepository
+
+<h3>Genres</h3>
+
+<MovieManagement.Client.Shared.GenreComponents.GenresList Genres="genres" />
+
+<div class="form-group">
+    <a class="btn btn-info" href="genres/create">New Genre</a>
+</div>
+@code {
+    private List<Genre> genres;
+
+    protected async override Task OnInitializedAsync()
+    {
+        genres = await genreRepository.GetGenres();
+    }
+}
