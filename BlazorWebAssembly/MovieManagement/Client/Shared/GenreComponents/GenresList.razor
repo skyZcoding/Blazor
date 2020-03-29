@@ -22,4 +22,9 @@
             await genreRepository.DeleteGenre(genre.Id);
         }
     }
+
+    protected override void OnInitialized()
+    {
+        StateHasChanged();
+    }
 }

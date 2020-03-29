@@ -1,0 +1,37 @@
+﻿<EditForm Model="Movie" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label>Name:</label>
+        <div>
+            <InputText class="form-control" @bind-Value="@Movie.Name" />
+            <ValidationMessage For="(() => Movie.Name)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Release Date:</label>
+        <div>
+            <InputDate class="form-control" @bind-Value="@Movie.ReleaseDate" />
+            <ValidationMessage For="(() => Movie.ReleaseDate)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div>
+            <InputImg Label="Picture"  OnSelectedImage="PicutureSelected" Image="@Movie.Image"/>
+            <ValidationMessage For="(() => Movie.Image)" />
+        </div>
+    </div>
+
+    <button class="btn btn-success" type="submit">Save Changes</button>
+</EditForm>
+
+@code {
+    [Parameter] public Movie Movie { get; set; }
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+    private void PicutureSelected(string imageBase64)
+    {
+        Movie.Image = Convert.FromBase64String(imageBase64);
+    }
+}

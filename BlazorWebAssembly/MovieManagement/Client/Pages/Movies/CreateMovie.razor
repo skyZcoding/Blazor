@@ -1,13 +1,22 @@
 ﻿@page "/movies/create"
+@inject IMovieRepository movieRepository
 @inject NavigationManager navigationManager
 
-<h3>CreateMovie</h3>
+<h3>Create Movie</h3>
 
-<button class="btn btn-primary" @onclick="SaveMovie">Save Movie</button>
+<MovieForm Movie="newMovie" OnValidSubmit="SaveMovie" />
 
 @code {
+    private Movie newMovie;
+
+    protected override void OnInitialized()
+    {
+        newMovie = new Movie();
+    }
+
     private void SaveMovie()
     {
-        navigationManager.NavigateTo("movie");
+        movieRepository.CreateMovie(newMovie);
+        navigationManager.NavigateTo("");
     }
 }
