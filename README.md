@@ -1,5 +1,17 @@
 # Blazor
 
+### Was ist Blazor ?
+
+Blazor ist ein Framework, welches uns erlaubt interaktive Web-Applikation mit C# zu erstellen.
+Sprich Blazor erlaubt es uns C# für das Frontend der Web-Applikation zu verwenden.
+
+#### Vorteile
+
+- .Net Ecosystem
+- C#
+- Code im Frontend und Backend zu verwenden
+- Mit den Blazor Komponent zu arbeiten
+
 ## Component
 
 ### Allgemein
