@@ -47,6 +47,25 @@ So könnte ein Razor Komponent aussehen.
 Und der Komponent würde dann wie in diesem Beispiel aufgerufen werden.
 An der Stelle, wo jetzt Beispiel steht müsste dann der Name von dem Komponent stehen.
 
+### Events
+
+Die Events die Blazor bei den HTML Elementen zur Verfügung stellt, können mit einem @ aufgerufen werden.
+
+```cs
+
+<button @onclick="Beispiel" ></button>
+
+@code {
+	private void Beispiel()
+	{
+		Console.WriteLine("Beispiel");
+	}
+}
+```
+
+Wie man am Beispiel sehen kann, muss einfach zwischen "" den Name von der Methode angegeben werden. 
+So wird dann jedes mal bei dem Event die Methode ausgeführt.
+
 ## Routing 
 
 ### Allgemein
