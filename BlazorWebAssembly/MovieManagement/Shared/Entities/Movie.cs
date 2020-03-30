@@ -19,5 +19,7 @@ namespace MovieManagement.Shared.Entities
         public byte[] Image { get; set; }
 
         public List<PersonMovie> PersonMovies { get; set; }
+
+        public List<MovieGenre> MovieGenre { get; set; }
     }
 }
