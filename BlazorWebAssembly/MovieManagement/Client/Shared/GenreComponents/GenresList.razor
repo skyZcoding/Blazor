@@ -1,0 +1,30 @@
+﻿@inject IGenreRepository genreRepository
+@inject IJSRuntime js
+
+<div class="movies-container">
+    <GenericList List="Genres">
+        <ElementTemplate Context="genre">
+            <IndividualGenre Genre="genre" DeleteGenre="DeleteGenre" />
+        </ElementTemplate>
+    </GenericList>
+</div>
+
+
+@code{
+    [Parameter] public List<Genre> Genres { get; set; }
+
+    private async Task DeleteGenre(Genre genre)
+    {
+        bool confirmed = await js.Confirm($"Are you sure you want to delete {genre.Name}?");
+
+        if (confirmed)
+        {
+            await genreRepository.DeleteGenre(genre.Id);
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        StateHasChanged();
+    }
+}

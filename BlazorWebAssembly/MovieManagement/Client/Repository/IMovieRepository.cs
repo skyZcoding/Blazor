@@ -9,6 +9,7 @@ namespace MovieManagement.Client.Repository
     public interface IMovieRepository
     {
         Task CreateMovie(Movie movie);
+        Task DeleteMovie(int id);
         Task<List<Movie>> GetMovies();
         Task<List<Movie>> GetMoviesByName(string name);
     }

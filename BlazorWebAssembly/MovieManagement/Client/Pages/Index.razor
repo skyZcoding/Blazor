@@ -1,7 +1,15 @@
 ﻿@page "/"
+@inject IMovieRepository movieRepository
 
-<h1>Hello, world!</h1>
+<h1>Movies</h1>
 
-Welcome to your new app.
+<MoviesList Movies="movies" />
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@code{
+    private List<Movie> movies;
+
+    protected async override Task OnInitializedAsync()
+    {
+        movies = await movieRepository.GetMovies();
+    }
+}

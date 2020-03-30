@@ -1,0 +1,33 @@
+﻿<div class="individual-movie-container">
+    <a href="@MovieURL">
+        <img src="data:image/jpeg;base64, @Image" alt="Poster" class="movie-poster" />
+    </a>
+    <p><a href="@MovieURL">@Movie.Name</a></p>
+    <div>
+        <a class="btn btn-info">Edit</a>
+        <button type="button" class="btn btn-danger"
+                @onclick="@(() => DeleteMovie.InvokeAsync(Movie))">
+            Delete
+        </button>
+    </div>
+</div>
+
+
+@code {
+    [Parameter] public Movie Movie { get; set; }
+    [Parameter] public EventCallback<Movie> DeleteMovie { get; set; }
+    public string MovieURL { get; set; }
+
+    public string Image
+    {
+        get
+        {
+            return Convert.ToBase64String(Movie.Image);
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        MovieURL = $"movie/{Movie.Id}";
+    }
+}

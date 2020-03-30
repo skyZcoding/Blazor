@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.Server", "MovieManagement\Server\MovieManagement.Server.csproj", "{DC5431D4-6706-4F71-B543-7E4A886A29FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieManagement.Server", "MovieManagement\Server\MovieManagement.Server.csproj", "{DC5431D4-6706-4F71-B543-7E4A886A29FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.Client", "MovieManagement\Client\MovieManagement.Client.csproj", "{97108733-7304-4CBC-B6B5-7D862FC722F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieManagement.Client", "MovieManagement\Client\MovieManagement.Client.csproj", "{97108733-7304-4CBC-B6B5-7D862FC722F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.Shared", "MovieManagement\Shared\MovieManagement.Shared.csproj", "{5FC133FF-C858-458E-A762-5F21DA73726F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieManagement.Shared", "MovieManagement\Shared\MovieManagement.Shared.csproj", "{5FC133FF-C858-458E-A762-5F21DA73726F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

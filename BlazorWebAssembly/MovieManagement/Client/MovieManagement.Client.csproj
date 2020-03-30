@@ -15,5 +15,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Shared\MovieManagement.Shared.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\People\" />
+  </ItemGroup>
 
 </Project>
