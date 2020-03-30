@@ -2,9 +2,42 @@
 
 ## Component
 
+### Allgemein
+
+- Ein Komponent ist ein wiederverwenbares Stück von einem "User interface"
+- Ein Komponent kann C# Code enthalten
+- Ein Komponent ist eine Klasse
+
+### Parameters
+
+Grundsätzlich können Parameter Daten, Events oder Content sein.
+Diese können dann übergeben werden, wenn der Komponent augerufen wird.
+
+```cs
+
+<di>
+	<p>@Text</p>
+</div>
+
+@code {
+	[Parameter] public string Text { get; set; }
+}
+```
+So könnte ein Razor Komponent aussehen.
+
+```cs
+
+<Beispiel Text="Das ist ein Beispiel"></Beispiel>
+
+@code {
+}
+```
+Und der Komponent würde dann wie in diesem Beispiel aufgerufen werden.
+An der Stelle, wo jetzt Beispiel steht müsste dann der Name von dem Komponent stehen.
+
 ## Routing 
 
-### Grundsätzlich
+### Allgemein
 
 Grundsätzlich muss man beim Routing wissen das es, wie bei dem unten gezeigten Beispiel, gemacht werden kann.
 Sprich es brauch ein @page und danach als string angeben, welchen Pfad die Seite hat.
