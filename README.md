@@ -11,11 +11,10 @@ Sprich es brauch ein @page und danach als string angeben, welchen Pfad die Seite
 Der Pfad muss immer mit einem / beginnen!
 
 ```cs
-@page "/for"
+@page "/Beispiel"
 
-for (int i = 0 ; i < 10; i++)
-{
- // Code to execute.
+@code {
+	// Code to execute.
 }
 ```
 
@@ -47,3 +46,29 @@ Man kann den NavigationManager brauchen in dem man ihn "injected", wie im Beispi
 ```
 
 Bei dem NavigationManager kann auch die aktuelle URL ausgelesen werden und noch einiges weiteres rund um die URL.
+
+### Route Params
+
+Die "Route Params" können ausgelesen werden, in dem man in der Route geschweifte Klamern macht.
+Diese Klamern müssen an dem Ort sein, wo man den Parameter erwartet.
+Dann sollte in der Klamer der Name von dem Parameter sein ( **muss gleich heissen, wie der angeben Parameter im Code** ).
+
+```cs
+@page "/Beispiel/{BeispielId:int}"
+@inject NavigationManager navigationManager
+
+<button class="btn btn-primary" @onclick="Redirect">Click me</button>
+
+@code {
+	[Parameter] public int BeispielId { get; set; }
+	
+	private void Redirect()
+	{
+		navigationManager.NavigateTo("Index");
+	}
+}
+```
+
+**Falls der Datentyp nicht string ist muss dieser explizit angeben werden, wie in dem Beispiel gezeigt.**
+
+
