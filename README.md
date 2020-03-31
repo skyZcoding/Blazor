@@ -66,6 +66,39 @@ Die Events die Blazor bei den HTML Elementen zur Verfügung stellt, können mit 
 Wie man am Beispiel sehen kann, muss einfach zwischen "" den Name von der Methode angegeben werden. 
 So wird dann jedes mal bei dem Event die Methode ausgeführt.
 
+### EventCallback
+
+EventCallbacks sind z.B. dafür da, dass man Methoden ausserhalb von dem Komponent aufrufen kann.
+Im Code drin würde das wie folgt aussehen, in dem Komponent wird ein Parameter von dem Typ EventCallback definiert.
+An dem Punkt, wo man den Komponent aufruft, wird dann die Methode als Parameter übergeben.
+
+```cs
+
+<button @onclick="(() => WriteBeispiel.InvokeAsync(beispiel))" ></button>
+
+@code {
+	private Beispiel beispiel;
+	[Parameter] public EventCallback<Beispiel> WriteBeispiel { get; set; }
+}
+```
+
+In dem Beispiel wird wenn auf den Button geclickt wird der EventCallback ausgeführt. 
+**Wichtig ist falls die Methode ein Parameter hat, muss in den <> den Datentyp angegeben werden.**
+
+```cs
+
+<BeispielComponent WriteBeispiel="WriteBeispiel"></BeispielComponent>
+
+@code {
+	private void WriteBeispiel(Beispiel beispiel)
+	{
+		Console.WriteLine(beispiel);
+	}
+}
+```
+
+In dem Beispiel wird gezeigt, wie man eine Methode übergibt.
+
 ## Routing 
 
 ### Allgemein
@@ -134,5 +167,6 @@ Dann sollte in der Klamer der Name von dem Parameter sein ( **muss gleich heisse
 ```
 
 **Falls der Datentyp nicht string ist muss dieser explizit angeben werden, wie in dem Beispiel gezeigt.**
+
 
 
