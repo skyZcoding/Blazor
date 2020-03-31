@@ -99,6 +99,34 @@ In dem Beispiel wird wenn auf den Button geclickt wird der EventCallback ausgef�
 
 In dem Beispiel wird gezeigt, wie man eine Methode 체bergibt.
 
+### RenderFragment
+
+RenderFragment ist daf체r da, dass z.B. HTML Text in einem Komponent 체bergeben werden kann.
+
+```cs
+
+@ChildContent
+
+@code {
+	[Parameter] public RenderFragment ChildContent { get; set; }
+}
+```
+
+Was man eigentlich nur braucht um das RenderFragment einzurichten ist, Parameter deklarieren und das Property vom Typ RenderFragment definieren.
+So kann man dann das Property, dann mit einem @ an der gew체nschten stelle aufrufen.
+
+```cs
+
+<BeispielComponent>
+	<p>Das ist ein Beispiel</p>
+</BeispielComponent>
+
+@code {
+}
+```
+
+Es kann dann einfach zwischen dem Komponent 체bergeben werden.
+
 ## Routing 
 
 ### Allgemein
