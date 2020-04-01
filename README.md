@@ -117,7 +117,7 @@ So kann man dann das Property, dann mit einem @ an der gewünschten stelle aufru
 
 ```cs
 
-<BeispielComponent>
+<BeispielComponent>//*
 	<p>Das ist ein Beispiel</p>
 </BeispielComponent>
 
@@ -196,5 +196,5 @@ Dann sollte in der Klamer der Name von dem Parameter sein ( **muss gleich heisse
 
 **Falls der Datentyp nicht string ist muss dieser explizit angeben werden, wie in dem Beispiel gezeigt.**
 
-
+## Debugging Blazor WebAssembly
 

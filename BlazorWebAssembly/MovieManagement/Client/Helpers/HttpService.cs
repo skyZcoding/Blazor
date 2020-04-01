@@ -20,9 +20,9 @@ namespace MovieManagement.Client.Helpers
         }
 
         /// <summary>
-        /// 
+        /// Macht eine Get request an den gewünschten Controller
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">Datentyp von dem Objekt</typeparam>
         /// <param name="url"></param>
         /// <returns></returns>
         public async Task<HttpResponseWrapper<T>> Get<T>(string url)
