@@ -9,11 +9,11 @@
     </div>
 </div>
 <div>
-    @if (imageBase64 != null)
+    @if (ImageBase64 != null)
     {
         <div>
             <div style="margin:10px">
-                <img src="data:image/jpeg;base64, @imageBase64" style="width: 400px"/>
+                <img src="data:image/jpeg;base64, @ImageBase64" style="width: 400px"/>
             </div>
         </div>
     }
@@ -24,7 +24,10 @@
     [Parameter] public EventCallback<string> OnSelectedImage { get; set; }
     [Parameter] public byte[] Image { get; set; }
 
-    public string imageBase64
+    /// <summary>
+    /// Wird gebraucht um das Bild auf der Website anzuzeigen
+    /// </summary>
+    public string ImageBase64
     {
         get
         {
@@ -39,6 +42,10 @@
 
     private ElementReference inputElement;
 
+    /// <summary>
+    /// Holt das geuploadete Image und speichert es in das Image Objekt
+    /// </summary>
+    /// <returns></returns>
     async Task ImageFileSelected()
     {
         foreach (IFileReference file in await fileReaderService.CreateReference(inputElement).EnumerateFilesAsync())

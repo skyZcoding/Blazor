@@ -13,6 +13,11 @@
 @code{
     [Parameter] public List<Genre> Genres { get; set; }
 
+    /// <summary>
+    /// Löscht ein Genre aus der Datenbank das Genre, Bestätigung mit Js gemacht
+    /// </summary>
+    /// <param name="genre">Das zu löschende Genre</param>
+    /// <returns></returns>
     private async Task DeleteGenre(Genre genre)
     {
         bool confirmed = await js.Confirm($"Are you sure you want to delete {genre.Name}?");

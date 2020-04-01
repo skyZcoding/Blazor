@@ -10,11 +10,18 @@
     [Parameter] public int GenreId { get; set; }
     private Genre genre;
 
+    /// <summary>
+    /// Holt das Genre aus der Datenbank mit der Id, welche als GenreId übergeben wurde.
+    /// </summary>
+    /// <returns></returns>
     protected async override Task OnInitializedAsync()
     {
         genre = await genreRepository.GetGenreById(GenreId);
     }
 
+    /// <summary>
+    /// Updatet das Genre und navigiert zum IndexGenres Komponent
+    /// </summary>
     private void SaveChanges()
     {
         genreRepository.UpdateGenre(genre);

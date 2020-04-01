@@ -13,12 +13,6 @@
 
     private async void IncrementCount()
     {
-        foreach (var item in await personRepository.GetPeople())
-        {
-            Console.WriteLine(item);
-        }
-        //Console.WriteLine((await personRepository.GetPeople()).Count());
-
         currentCount++;
     }
 }
