@@ -208,12 +208,24 @@ Sprich man kann z.B. die Breakpoints im Network Tab bei file:// setzten.
 ### Tutorial 
 
 Um nun die Blazor Applikation zu debuggen muss die Applikation gestartet sein.
-Wenn die Applikation dann gestart ist muss die Tastenkombination *Shift + Alt + D* ausgeführt werden.
+Wenn die Applikation dann gestart ist muss die Tastenkombination <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kdb>D</kdb> ausgeführt werden.
 
 ![Alt text](/Images/debuggingstep1.png?raw=true "Blazor WebAssembly Debugging Step 1.")
 
 Wenn dies gemacht wurde, sollte sich dann dieses Fenster öffnen.
 Falls man nun im Chromebrowser ist sollte der Rot umrahmte Text kopiert werden.
-Wenn dies gemacht wurde muss nun die Tastenkombination <kbd>windows</kbd> + <kbd>R</kbd> ausgeführt werden und dann dort den Text einfügen.
+Wenn dies gemacht wurde muss nun die Tastenkombination <kbd>Windows</kbd> + <kbd>R</kbd> ausgeführt werden und dann dort den Text einfügen.
 
 ![Alt text](/Images/debuggingstep2.png?raw=true "Blazor WebAssembly Debugging Step 2.")
+
+Dies sollte nun einfach nur noch ausgeführt werden.
+
+![Alt text](/Images/debuggingstep3.png?raw=true "Blazor WebAssembly Debugging Step 3.")
+
+Nun sollte sich dieses Fenster geöffnet haben.
+Es muss jetzt nochmals die Tastenkombination <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kdb>D</kdb> ausgeführt werden.
+
+![Alt text](/Images/debuggingstep4.png?raw=true "Blazor WebAssembly Debugging Step 4.")
+
+Jetzt sollte sich das folgende Fenster geöffnet haben, dort müsste man jetzt Client und Shared unter dem Localhost Abschnitt sehen.
+Dort können nun die Breakpoints gesetzt werden.
