@@ -208,7 +208,7 @@ Sprich man kann z.B. die Breakpoints im Network Tab bei file:// setzten.
 ### Tutorial 
 
 Um nun die Blazor Applikation zu debuggen muss die Applikation gestartet sein.
-Wenn die Applikation dann gestart ist muss die Tastenkombination <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kdb>D</kdb> ausgeführt werden.
+Wenn die Applikation dann gestart ist muss die Tastenkombination <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>D</kbd> ausgeführt werden.
 
 ![Alt text](/Images/debuggingstep1.png?raw=true "Blazor WebAssembly Debugging Step 1.")
 
@@ -223,7 +223,7 @@ Dies sollte nun einfach nur noch ausgeführt werden.
 ![Alt text](/Images/debuggingstep3.png?raw=true "Blazor WebAssembly Debugging Step 3.")
 
 Nun sollte sich dieses Fenster geöffnet haben.
-Es muss jetzt nochmals die Tastenkombination <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kdb>D</kdb> ausgeführt werden.
+Es muss jetzt nochmals die Tastenkombination <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>D</kbd> ausgeführt werden.
 
 ![Alt text](/Images/debuggingstep4.png?raw=true "Blazor WebAssembly Debugging Step 4.")
 
