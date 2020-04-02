@@ -9,11 +9,17 @@
 @code {
     private Genre newGenre;
 
+    /// <summary>
+    /// Initialisiert das Objekt
+    /// </summary>
     protected override void OnInitialized()
     {
         newGenre = new Genre();
     }
 
+    /// <summary>
+    /// Speichert das neu erstellte Genre Objekt und navigiert dann zum IndexGenres Komponent
+    /// </summary>
     private void SaveGenre()
     {
         genreRepository.CreateGenre(newGenre);

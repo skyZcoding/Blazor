@@ -25,7 +25,6 @@ namespace MovieManagement.Server.Controllers
             return await context.Movies.ToListAsync();
         }
 
-
         [HttpGet("search/{searchText}")]
         public async Task<ActionResult<List<Movie>>> FilterByName(string searchText)
         {
@@ -39,7 +38,6 @@ namespace MovieManagement.Server.Controllers
                             .Take(5)
                             .ToListAsync();
         }
-
 
         [HttpPost]
         public async Task<ActionResult<int>> Post(Movie movie)

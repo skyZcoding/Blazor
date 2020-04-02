@@ -8,6 +8,10 @@
 @code{
     private List<Movie> movies;
 
+    /// <summary>
+    /// Holt alle Filme aus der Datenbank und weisst es dem movies Attribut
+    /// </summary>
+    /// <returns></returns>
     protected async override Task OnInitializedAsync()
     {
         movies = await movieRepository.GetMovies();

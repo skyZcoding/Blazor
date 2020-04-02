@@ -47,6 +47,9 @@
         Movie.Image = Convert.FromBase64String(imageBase64);
     }
 
+    /// <summary>
+    ///
+    /// </summary>
     protected override void OnParametersSet()
     {
         try
@@ -64,6 +67,10 @@
         }
     }
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <returns></returns>
     private async Task OnDataAnnotationsValidated()
     {
         Movie.MovieGenre = Selected

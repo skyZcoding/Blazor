@@ -13,7 +13,14 @@ namespace MovieManagement.Client.Helpers
             Value = value;
         }
 
+        /// <summary>
+        /// Enthält z.B. die Id von dem Objekt
+        /// </summary>
         public string Key { get; set; }
+
+        /// <summary>
+        /// Enthält den Inhalt von dem Objekt, welcher für das anzeigen benötigt wird
+        /// </summary>
         public string Value { get; set; }
     }
 }

@@ -11,13 +11,19 @@
     private Movie newMovie;
     private List<Genre> NotSelectedGenres;
 
+    /// <summary>
+    /// Initialisiert das Ojekt von dem neuen Film 
+    /// </summary>
+    /// <returns></returns>
     protected async override Task OnInitializedAsync()
     {
         newMovie = new Movie();
         NotSelectedGenres = await genreRepository.GetGenres();
     }
 
-
+    /// <summary>
+    /// Speichert den Film in der Datenbank und navigiert zur Startseite
+    /// </summary>
     private void SaveMovie()
     {
         movieRepository.CreateMovie(newMovie);

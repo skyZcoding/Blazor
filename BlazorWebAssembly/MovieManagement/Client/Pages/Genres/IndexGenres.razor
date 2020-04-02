@@ -11,6 +11,10 @@
 @code {
     private List<Genre> genres;
 
+    /// <summary>
+    /// Holt alle Genres aus der Datenbank und weisst es dem Attribut genres den Wert zu
+    /// </summary>
+    /// <returns></returns>
     protected async override Task OnInitializedAsync()
     {
         genres = await genreRepository.GetGenres();
