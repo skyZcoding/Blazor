@@ -213,3 +213,7 @@ Wenn die Applikation dann gestart ist muss die Tastenkombination *Shift + Alt + 
 ![Alt text](/Images/debuggingstep1.png?raw=true "Blazor WebAssembly Debugging Step 1.")
 
 Wenn dies gemacht wurde, sollte sich dann dieses Fenster öffnen.
+Falls man nun im Chromebrowser ist sollte der Rot umrahmte Text kopiert werden.
+Wenn dies gemacht wurde muss nun die Tastenkombination <kbd>windows</kbd> + <kbd>R</kbd> ausgeführt werden und dann dort den Text einfügen.
+
+![Alt text](/Images/debuggingstep2.png?raw=true "Blazor WebAssembly Debugging Step 2.")
