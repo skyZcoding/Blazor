@@ -198,3 +198,18 @@ Dann sollte in der Klamer der Name von dem Parameter sein ( **muss gleich heisse
 
 ## Debugging Blazor WebAssembly
 
+### Vorwort 
+
+Blazor WebAssembly debugging geht nicht, wie bei dem Blazor Serverside, einfach in Visual Studio.
+Das Debugging in Blazor WebAssembly funktioniert im Moment über den Browser.
+Sprich man kann z.B. die Breakpoints im Network Tab bei file:// setzten.
+**Achtung diese Art von debugging ist momentan noch nicht ausgereift.**
+
+### Tutorial 
+
+Um nun die Blazor Applikation zu debuggen muss die Applikation gestartet sein.
+Wenn die Applikation dann gestart ist muss die Tastenkombination *Shift + Alt + D* ausgeführt werden.
+
+![Alt text](/Images/debugging step 1.png?raw=true "Blazor WebAssembly Debugging Step 1.")
+
+Wenn dies gemacht wurde, sollte sich dann dieses Fenster öffnen.

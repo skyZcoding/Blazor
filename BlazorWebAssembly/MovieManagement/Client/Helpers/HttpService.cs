@@ -23,7 +23,7 @@ namespace MovieManagement.Client.Helpers
         /// Macht eine Get request an den gewünschten Controller
         /// </summary>
         /// <typeparam name="T">Datentyp von dem Objekt</typeparam>
-        /// <param name="url"></param>
+        /// <param name="url">URL von dem Controller</param>
         /// <returns></returns>
         public async Task<HttpResponseWrapper<T>> Get<T>(string url)
         {
@@ -40,9 +40,9 @@ namespace MovieManagement.Client.Helpers
         }
 
         /// <summary>
-        /// 
+        /// Macht Delete request an den gewünschten Controller
         /// </summary>
-        /// <param name="url"></param>
+        /// <param name="url">URL von dem Controller</param>
         /// <returns></returns>
         public async Task<HttpResponseWrapper<object>> Delete(string url)
         {
@@ -52,11 +52,11 @@ namespace MovieManagement.Client.Helpers
         }
 
         /// <summary>
-        /// 
+        /// Macht eine Put Request an den gewünschten Controller
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="url"></param>
-        /// <param name="data"></param>
+        /// <typeparam name="T">Datentyp von dem Objekt</typeparam>
+        /// <param name="url">URL von dem Controller</param>
+        /// <param name="data">Das Objekt für die Put Request</param>
         /// <returns></returns>
         public async Task<HttpResponseWrapper<object>> Put<T>(string url, T data)
         {
@@ -68,11 +68,11 @@ namespace MovieManagement.Client.Helpers
         }
 
         /// <summary>
-        /// 
+        /// Macht eine Post Request an den gewünschten Controller
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="url"></param>
-        /// <param name="data"></param>
+        /// <typeparam name="T">Datentyp von dem Objekt</typeparam>
+        /// <param name="url">URL von dem Controller</param>
+        /// <param name="data">Das Objekt für die Post Request</param>
         /// <returns></returns>
         public async Task<HttpResponseWrapper<object>> Post<T>(string url, T data)
         {
@@ -84,12 +84,12 @@ namespace MovieManagement.Client.Helpers
         }
 
         /// <summary>
-        /// 
+        /// Macht eine Post Request an den gewünschten Controller
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TResponse"></typeparam>
-        /// <param name="url"></param>
-        /// <param name="data"></param>
+        /// <typeparam name="T">Datentyp von dem Objekt</typeparam>
+        /// <typeparam name="TResponse">Datentyp von dem zurückbekommenen Objekt</typeparam>
+        /// <param name="url">URL von dem Controller</param>
+        /// <param name="data">Das Objekt für die Post Request</param>
         /// <returns></returns>
         public async Task<HttpResponseWrapper<TResponse>> Post<T, TResponse>(string url, T data)
         {
