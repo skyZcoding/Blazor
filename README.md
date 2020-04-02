@@ -210,6 +210,6 @@ Sprich man kann z.B. die Breakpoints im Network Tab bei file:// setzten.
 Um nun die Blazor Applikation zu debuggen muss die Applikation gestartet sein.
 Wenn die Applikation dann gestart ist muss die Tastenkombination *Shift + Alt + D* ausgeführt werden.
 
-![Alt text](/Images/debugging step 1.png?raw=true "Blazor WebAssembly Debugging Step 1.")
+![Alt text](/Images/debuggingstep1.png?raw=true "Blazor WebAssembly Debugging Step 1.")
 
 Wenn dies gemacht wurde, sollte sich dann dieses Fenster öffnen.
